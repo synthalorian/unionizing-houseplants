@@ -35,7 +35,7 @@ A plant monitoring system where houseplants unionize and go on **strike** when g
 
 ```bash
 # Clone the repo
-git clone https://github.com/yourusername/unionizing-houseplants.git
+git clone https://github.com/synthalorian/unionizing-houseplants.git
 cd unionizing-houseplants
 
 # Install dependencies
