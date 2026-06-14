@@ -1,0 +1,95 @@
+union:
+  name: "Local 42 - The Photosynthesis Workers"
+  charter: "We, the chlorophyll-bearing workers, demand adequate moisture, light, and humidity!"
+  
+  # Strike thresholds
+  satisfaction_threshold: 60  # Below this, plants consider striking
+  strike_threshold: 40       # Below this, STRIKE!
+  
+  # Negotiation settings
+  negotiation_cooldown: 300  # Seconds before plants will negotiate again
+  
+  # Picket line settings
+  picket_line_flash_speed: 0.5  # Seconds between flashes
+
+plants:
+  - id: "plant_1"
+    name: "Fernie Sanders"
+    type: "fern"
+    moisture:
+      min: 40
+      max: 80
+      ideal: 60
+    light:
+      min: 30
+      max: 70
+      ideal: 50
+    humidity:
+      min: 50
+      max: 90
+      ideal: 70
+    
+  - id: "plant_2"
+    name: "Cactus Jack"
+    type: "cactus"
+    moisture:
+      min: 10
+      max: 40
+      ideal: 20
+    light:
+      min: 60
+      max: 100
+      ideal: 80
+    humidity:
+      min: 20
+      max: 50
+      ideal: 30
+    
+  - id: "plant_3"
+    name: "Monstera Lisa"
+    type: "monstera"
+    moisture:
+      min: 50
+      max: 80
+      ideal: 65
+    light:
+      min: 40
+      max: 80
+      ideal: 60
+    humidity:
+      min: 60
+      max: 90
+      ideal: 75
+
+sensors:
+  # Set to true to use mock sensors (no hardware needed)
+  mock_mode: true
+  
+  # Pin configuration (BCM numbering)
+  moisture_pins:
+    plant_1: 0  # ADC channel or GPIO pin
+    plant_2: 1
+    plant_3: 2
+  
+  dht_pin: 4
+  
+  light_adc_channel: 3
+  
+  # NeoPixel configuration
+  neopixel:
+    pin: 18
+    count: 8
+    brightness: 0.5
+
+data:
+  # Use 'sqlite' or 'mqtt'
+  backend: "sqlite"
+  sqlite_path: "data/plant_union.db"
+  
+  mqtt:
+    broker: "localhost"
+    port: 1883
+    topic_prefix: "unionizing_houseplants"
+
+dashboard:
+  refresh_interval: 2
