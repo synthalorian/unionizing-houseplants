@@ -1,0 +1,55 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "unionizing-houseplants"
+version = "1.0.0"
+description = "A plant monitoring system where houseplants unionize and go on strike when conditions are poor."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "Unionizing Houseplants Contributors"}
+]
+keywords = ["plants", "iot", "raspberry-pi", "sensors", "monitoring", "union", "strike"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Education",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Operating System :: POSIX :: Linux",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Home Automation",
+    "Topic :: Scientific/Engineering",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "PyYAML>=6.0",
+    "click>=8.0",
+    "rich>=13.0",
+    "paho-mqtt>=1.6",
+    "adafruit-circuitpython-dht; platform_machine=='armv7l' or platform_machine=='aarch64'",
+    "adafruit-circuitpython-neopixel; platform_machine=='armv7l' or platform_machine=='aarch64'",
+    "rpi_ws281x; platform_machine=='armv7l' or platform_machine=='aarch64'",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+]
+
+[project.scripts]
+unionizing-houseplants = "unionizing_houseplants.main:main"
+
+[project.urls]
+Homepage = "https://github.com/yourusername/unionizing-houseplants"
+Repository = "https://github.com/yourusername/unionizing-houseplants"
+Issues = "https://github.com/yourusername/unionizing-houseplants/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["unionizing_houseplants*"]
