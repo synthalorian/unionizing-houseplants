@@ -1,3 +1,5 @@
+![unionizing-houseplants](.github/preview.png)
+
 # Unionizing Houseplants 🌿✊
 
 > *When your plants have had enough, they organize.*
